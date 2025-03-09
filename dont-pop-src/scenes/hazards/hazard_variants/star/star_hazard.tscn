@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://l4su0fb8myyp"]
+
+[ext_resource type="PackedScene" uid="uid://jop6t3jokp62" path="res://scenes/hazards/base_hazard.tscn" id="1_k0egv"]
+[ext_resource type="Script" uid="uid://cohmyjvey56rl" path="res://scenes/hazards/hazard_variants/star/star_hazard.gd" id="2_31t7r"]
+[ext_resource type="Texture2D" uid="uid://cdis4xkewxrre" path="res://scenes/hazards/sprites/star.png" id="3_4oqcr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_17cgw"]
+radius = 7.0
+
+[node name="StarHazard" instance=ExtResource("1_k0egv")]
+script = ExtResource("2_31t7r")
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(-1, 3)
+texture = ExtResource("3_4oqcr")
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CircleShape2D_17cgw")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://gop5rw15hex"]
+
+[ext_resource type="Script" uid="uid://bsegtbum7gof1" path="res://scenes/llama/llama.gd" id="1_ehlf3"]
+[ext_resource type="Texture2D" uid="uid://c746angf4gr0q" path="res://scenes/llama/sprites/llama.png" id="2_ursqh"]
+
+[node name="Llama" type="Node2D"]
+script = ExtResource("1_ehlf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-19, 0)
+texture = ExtResource("2_ursqh")

@@ -1,0 +1,117 @@
+[gd_scene load_steps=21 format=3 uid="uid://cy82ut854jv8p"]
+
+[ext_resource type="Script" uid="uid://br8pgb0cjhcew" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://d1l88lmumco1j" path="res://scenes/components/velocity/velocity_component.tscn" id="2_gmlin"]
+[ext_resource type="PackedScene" uid="uid://d1hwbew45x1jy" path="res://scenes/player/scenes/pop/player_pop.tscn" id="2_kvlxm"]
+[ext_resource type="PackedScene" uid="uid://ssq2ttgu46dt" path="res://scenes/components/health/health_component.tscn" id="2_lvxji"]
+[ext_resource type="PackedScene" uid="uid://sudd0wtk305l" path="res://scenes/components/controller/controller_component.tscn" id="2_p47bc"]
+[ext_resource type="Texture2D" uid="uid://ptx02qxduhwe" path="res://scenes/player/sprites/idle/balloon1.png" id="5_je7p5"]
+[ext_resource type="PackedScene" uid="uid://okcpyl6a5j4y" path="res://scenes/hurtbox/hurtbox.tscn" id="5_myrg7"]
+[ext_resource type="Texture2D" uid="uid://c0bon6qbf6tcd" path="res://scenes/player/sprites/idle/balloon2.png" id="6_fm80t"]
+[ext_resource type="Texture2D" uid="uid://dfre5qya7lvb3" path="res://scenes/player/sprites/idle/balloon3.png" id="7_gx1jg"]
+[ext_resource type="Texture2D" uid="uid://3e50vkvepi7d" path="res://scenes/player/sprites/idle/balloon4.png" id="8_ugbui"]
+[ext_resource type="Texture2D" uid="uid://ly1nwlpen20r" path="res://scenes/player/sprites/idle/balloon5.png" id="9_fcs02"]
+[ext_resource type="Texture2D" uid="uid://vqcnshl7lykj" path="res://scenes/player/sprites/idle/balloon6.png" id="10_myrg7"]
+[ext_resource type="Texture2D" uid="uid://31juiujp372q" path="res://scenes/player/sprites/idle/balloon7.png" id="11_kvlxm"]
+[ext_resource type="Texture2D" uid="uid://dgh8u7y3mdys8" path="res://scenes/player/sprites/move/move1.png" id="12_fcs02"]
+[ext_resource type="Texture2D" uid="uid://j7gq4t4r6lv5" path="res://scenes/player/sprites/move/move2.png" id="13_myrg7"]
+[ext_resource type="Texture2D" uid="uid://bhmjvot6xe1sc" path="res://scenes/player/sprites/move/move3.png" id="14_kvlxm"]
+[ext_resource type="Texture2D" uid="uid://hqfithuo8wco" path="res://scenes/player/sprites/move/move4.png" id="15_uf5tr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvxji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_je7p5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fm80t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gx1jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ugbui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fcs02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_myrg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kvlxm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_fcs02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_myrg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kvlxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uf5tr")
+}],
+"loop": true,
+"name": &"move",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_myrg7"]
+radius = 11.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 5
+script = ExtResource("1_8afob")
+death_scene = ExtResource("2_kvlxm")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="ControllerComponent" parent="Components" instance=ExtResource("2_p47bc")]
+unique_name_in_owner = true
+
+[node name="HealthComponent" parent="Components" instance=ExtResource("2_lvxji")]
+unique_name_in_owner = true
+inital_health = 1
+
+[node name="VelocityComponent" parent="Components" instance=ExtResource("2_gmlin")]
+unique_name_in_owner = true
+max_speed = 275
+acceleration = 3.5
+
+[node name="VelocityComponent2" parent="Components" instance=ExtResource("2_gmlin")]
+unique_name_in_owner = true
+max_speed = 275
+acceleration = 3.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_lvxji")
+animation = &"move"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.311336
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -7)
+shape = SubResource("CircleShape2D_dovo2")
+
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("5_myrg7")]
+position = Vector2(1, 0)
+collision_layer = 2
+collision_mask = 2
+health = NodePath("../Components/HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_myrg7")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlkjjdnoy4dk3"]
+
+[ext_resource type="PackedScene" uid="uid://jop6t3jokp62" path="res://scenes/hazards/base_hazard.tscn" id="1_7tnxv"]
+[ext_resource type="Texture2D" uid="uid://b3tt6j8djxdrq" path="res://scenes/hazards/sprites/lightning.png" id="2_u425b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y64el"]
+radius = 6.0
+
+[node name="LightningHazard" instance=ExtResource("1_7tnxv")]
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_u425b")
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CapsuleShape2D_y64el")

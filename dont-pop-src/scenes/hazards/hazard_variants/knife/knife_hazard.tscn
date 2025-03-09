@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://0ybmsmccqrpv"]
+
+[ext_resource type="PackedScene" uid="uid://jop6t3jokp62" path="res://scenes/hazards/base_hazard.tscn" id="1_jtvos"]
+[ext_resource type="Script" uid="uid://ctmre7qk10q64" path="res://scenes/hazards/hazard_variants/knife/knife_hazard.gd" id="2_xejum"]
+[ext_resource type="Texture2D" uid="uid://b1xmmx5qliyrq" path="res://scenes/hazards/sprites/knife.png" id="3_oe2yt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oe2yt"]
+radius = 4.0
+height = 32.0
+
+[node name="KnifeHazard" instance=ExtResource("1_jtvos")]
+script = ExtResource("2_xejum")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("3_oe2yt")
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_oe2yt")
