@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c3qi0fmtrt7qr" path="res://scenes/hazards/base_hazard.gd" id="1_bg0n4"]
 [ext_resource type="PackedScene" uid="uid://d1l88lmumco1j" path="res://scenes/components/velocity/velocity_component.tscn" id="2_kvffu"]
 
-[node name="BaseHazard" type="CharacterBody2D"]
+[node name="BaseHazard" type="CharacterBody2D" groups=["hazards"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_bg0n4")

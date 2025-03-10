@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://do5vl4e7flf8u"]
+
+[ext_resource type="Script" uid="uid://gvfdyetm6vrn" path="res://scenes/power_ups/base_power_up.gd" id="1_1vmb3"]
+
+[node name="BasePowerUp" type="Node2D"]
+script = ExtResource("1_1vmb3")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+
+[node name="CollectArea2D" type="Area2D" parent="Visuals"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

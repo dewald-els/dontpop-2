@@ -14,8 +14,12 @@ func _physics_process(delta: float) -> void:
 	# - Will "increase" difficulty -> Also set ceiling for speed.
 	velocity_component.accelerate(direction)
 	velocity_component.move(self)
-	rotation += (velocity_component.acceleration * 1.25) * delta
+	rotation += 0.275
+	
+
+func destroy() -> void:
+	Callable(queue_free).call_deferred()
 
 
 func on_self_destruct_timeout() -> void:
-	Callable(queue_free).call_deferred()
+	destroy()

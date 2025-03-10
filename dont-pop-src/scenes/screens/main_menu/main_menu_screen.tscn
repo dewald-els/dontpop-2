@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbcnj6ei1qbrf"]
+
+[ext_resource type="Script" uid="uid://wsw0ghqq3dbs" path="res://scenes/screens/main_menu/main_menu_screen.gd" id="1_mf2mp"]
+[ext_resource type="Theme" uid="uid://c77nee8mfup5a" path="res://assets/theme/game_theme.tres" id="1_vkt5c"]
+[ext_resource type="PackedScene" uid="uid://bbnybbaxkfywo" path="res://scenes/game/game.tscn" id="2_lk734"]
+
+[node name="MainMenuScreen" type="CanvasLayer"]
+script = ExtResource("1_mf2mp")
+game_scene = ExtResource("2_lk734")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vkt5c")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_vkt5c")
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 64
+text = "Don't Pop!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_vkt5c")
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"

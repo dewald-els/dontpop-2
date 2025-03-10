@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c77nee8mfup5a"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c77nee8mfup5a"]
 
 [ext_resource type="FontFile" uid="uid://b7aegphpn6jw7" path="res://assets/theme/fonts/born2bsporty-fs/Born2bSportyFS.otf" id="1_k528p"]
 [ext_resource type="Texture2D" uid="uid://ncpdhnxegaos" path="res://assets/theme/sprites/backgrounds/001.png" id="1_trfjm"]
@@ -51,6 +51,9 @@ expand_margin_right = 8.0
 expand_margin_bottom = 4.0
 region_rect = Rect2(36, 0, 18, 18)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k528p"]
+bg_color = Color(0.352941, 0.772549, 0.8, 1)
+
 [resource]
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 2
@@ -62,3 +65,4 @@ Button/styles/pressed = SubResource("StyleBoxTexture_605w4")
 Label/colors/font_outline_color = Color(0.239216, 0.160784, 0.188235, 1)
 Label/constants/outline_size = 8
 Label/fonts/font = ExtResource("1_k528p")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_k528p")

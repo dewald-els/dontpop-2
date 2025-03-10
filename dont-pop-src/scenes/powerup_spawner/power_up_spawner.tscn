@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3kl6f0lvb8we"]
+
+[ext_resource type="Script" uid="uid://7p63f1hwrthu" path="res://scenes/powerup_spawner/power_up_spawner.gd" id="1_8c10u"]
+
+[node name="PowerUpSpawner" type="Node2D"]
+script = ExtResource("1_8c10u")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bbnybbaxkfywo"]
+[gd_scene load_steps=9 format=4 uid="uid://bbnybbaxkfywo"]
 
 [ext_resource type="Script" uid="uid://dw3od1sc23rae" path="res://scenes/game/game.gd" id="1_sul5r"]
 [ext_resource type="PackedScene" uid="uid://dbg4niw8k1sbt" path="res://scenes/sky/sky.tscn" id="2_7h61r"]
 [ext_resource type="PackedScene" uid="uid://cy82ut854jv8p" path="res://scenes/player/player.tscn" id="3_0sr1o"]
 [ext_resource type="TileSet" uid="uid://p1k8y1pl3anh" path="res://assets/tiles/tiles.tres" id="3_kelw5"]
+[ext_resource type="PackedScene" uid="uid://bisja1rul8rtf" path="res://scenes/power_ups/bomb/bomb_powerup.tscn" id="5_87uf6"]
 [ext_resource type="PackedScene" uid="uid://cly66wkp7q7rl" path="res://scenes/hazard_spawner/hazard_spawner.tscn" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://41lviliu15bs" path="res://scenes/coin_spawner/coin_spawner.tscn" id="6_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://xnhm4um7fe2f" path="res://scenes/ui/hud/hud.tscn" id="7_bdhmt"]
@@ -29,6 +30,11 @@ tile_set = ExtResource("3_kelw5")
 [node name="HazardsContainer" type="Node" parent="." groups=["hazard_container"]]
 
 [node name="CoinContainer" type="Node" parent="." groups=["coin_container"]]
+
+[node name="PowerUpContainer" type="Node" parent="." groups=["powerup_container"]]
+
+[node name="BombPowerUp" parent="PowerUpContainer" instance=ExtResource("5_87uf6")]
+position = Vector2(120, 185)
 
 [node name="Spawners" type="Node" parent="."]
 

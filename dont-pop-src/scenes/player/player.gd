@@ -43,5 +43,4 @@ func on_health_empty() -> void:
 		var death: PlayerPop = death_scene.instantiate()
 		get_tree().root.add_child(death)
 		death.global_position = global_position
-		SignalBus.player_died.emit()
 		Callable(queue_free).call_deferred()
