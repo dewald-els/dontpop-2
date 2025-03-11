@@ -46,7 +46,7 @@ func get_random_spawn_position() -> Vector2:
 	
 func spawn_random_hazard() -> void:
 	if player:
-		var powerup: BasePowerUp = powerups.pick_random().instantiate()
+		var powerup: BasePowerUpPickup = powerups.pick_random().instantiate()
 		powerup_container.add_child(powerup)
 		powerup.global_position = get_random_spawn_position()
 	

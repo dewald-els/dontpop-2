@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://nlwxw3b4c8yt"]
+
+[ext_resource type="PackedScene" uid="uid://c68hnxmkhlu6h" path="res://scenes/power_ups/base_powerup.tscn" id="1_x4ckr"]
+[ext_resource type="Script" uid="uid://ekf8gttj8p3g" path="res://scenes/power_ups/bomb/bomb_powerup/bomb_powerup.gd" id="2_rs3nk"]
+
+[node name="BombPowerup" instance=ExtResource("1_x4ckr")]
+script = ExtResource("2_rs3nk")

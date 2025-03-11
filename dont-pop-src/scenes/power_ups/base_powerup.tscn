@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c68hnxmkhlu6h"]
+
+[ext_resource type="Script" uid="uid://dyo3heo7pwf6" path="res://scenes/power_ups/base_powerup.gd" id="1_cm14l"]
+
+[node name="BasePowerup" type="Node2D"]
+script = ExtResource("1_cm14l")

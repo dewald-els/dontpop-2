@@ -94,6 +94,9 @@ unique_name_in_owner = true
 max_speed = 275
 acceleration = 3.5
 
+[node name="PowerUpsContainer" type="Node2D" parent="." groups=["player_powerups"]]
+unique_name_in_owner = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_lvxji")

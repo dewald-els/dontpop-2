@@ -1,7 +1,7 @@
-class_name BombPowerUp
-extends BasePowerUp
+class_name BombPowerup
+extends BasePowerup
 
-func apply() -> void:
+func _ready() -> void:
 	var hazards = get_tree().get_nodes_in_group("hazards") as Array[BaseHazard]
 	
 	if not hazards or hazards.size() == 0:
@@ -10,8 +10,5 @@ func apply() -> void:
 
 	for hazard in hazards:
 		hazard.destroy()
-		
+	
 	destroy()
-
-func destroy() -> void:
-	Callable(queue_free).call_deferred()

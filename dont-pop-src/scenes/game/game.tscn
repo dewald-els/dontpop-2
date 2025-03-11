@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bbnybbaxkfywo"]
+[gd_scene load_steps=10 format=4 uid="uid://bbnybbaxkfywo"]
 
 [ext_resource type="Script" uid="uid://dw3od1sc23rae" path="res://scenes/game/game.gd" id="1_sul5r"]
 [ext_resource type="PackedScene" uid="uid://cy82ut854jv8p" path="res://scenes/player/player.tscn" id="3_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://cpvupx01cjrno" path="res://scenes/sky_ background/sky_background.tscn" id="3_87uf6"]
 [ext_resource type="TileSet" uid="uid://p1k8y1pl3anh" path="res://assets/tiles/tiles.tres" id="3_kelw5"]
+[ext_resource type="PackedScene" uid="uid://cdeelh8krau0h" path="res://scenes/main_camera/main_camera.tscn" id="4_2a8rs"]
 [ext_resource type="PackedScene" uid="uid://cly66wkp7q7rl" path="res://scenes/hazard_spawner/hazard_spawner.tscn" id="5_lfrn8"]
 [ext_resource type="PackedScene" uid="uid://41lviliu15bs" path="res://scenes/coin_spawner/coin_spawner.tscn" id="6_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://b3kl6f0lvb8we" path="res://scenes/powerup_spawner/power_up_spawner.tscn" id="7_87uf6"]
@@ -16,8 +17,7 @@ script = ExtResource("1_sul5r")
 
 [node name="SkyBackground" parent="." instance=ExtResource("3_87uf6")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+[node name="MainCamera" parent="." instance=ExtResource("4_2a8rs")]
 
 [node name="TileMapLayerTopBottom" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAQADAAAAAAABAAAAAQADAAAAAAACAAAAAQADAAAAAAADAAAAAQADAAAAAAAEAAAAAQADAAAAAAAFAAAAAQADAAAAAAAGAAAAAQADAAAAAAAHAAAAAQADAAAAAAAIAAAAAQADAAAAAAAJAAAAAQADAAAAAAAKAAAAAQADAAAAAAALAAAAAQADAAAAAAAMAAAAAQADAAAAAAANAAAAAQADAAAAAAAOAAAAAQADAAAAAAAPAAAAAQADAAAAAAAQAAAAAQADAAAAAAARAAAAAQADAAAAAAASAAAAAQADAAAAAAATAAAAAQADAAAAAAAUAAAAAQADAAAAAAAVAAAAAQADAAAAAAAWAAAAAQADAAAAAAAAAAwAAQACAAAAAAABAAwAAQACAAAAAAACAAwAAQACAAAAAAADAAwAAQACAAAAAAAEAAwAAQACAAAAAAAFAAwAAQACAAAAAAAGAAwAAQACAAAAAAAHAAwAAQACAAAAAAAIAAwAAQACAAAAAAAJAAwAAQACAAAAAAAMAAwAAQACAAAAAAANAAwAAQACAAAAAAAOAAwAAQACAAAAAAAPAAwAAQACAAAAAAAQAAwAAQACAAAAAAALAAwAAQACAAAAAAAKAAwAAQACAAAAAAARAAwAAQACAAAAAAASAAwAAQACAAAAAAATAAwAAQACAAAAAAAUAAwAAQACAAAAAAAVAAwAAQACAAAAAAAWAAwAAQACAAAAAAA=")

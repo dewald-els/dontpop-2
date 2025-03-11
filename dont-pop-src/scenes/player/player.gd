@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var death_scene: PackedScene
 
-
+@onready var power_ups_container: Node2D = %PowerUpsContainer
 @onready var velocity_component: VelocityComponent = %VelocityComponent
 @onready var health_component: HealthComponent = %HealthComponent
 @onready var controller_component: ControllerComponent = %ControllerComponent
