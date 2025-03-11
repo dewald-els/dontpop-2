@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c77nee8mfup5a"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://c77nee8mfup5a"]
 
 [ext_resource type="FontFile" uid="uid://b7aegphpn6jw7" path="res://assets/theme/fonts/born2bsporty-fs/Born2bSportyFS.otf" id="1_k528p"]
 [ext_resource type="Texture2D" uid="uid://ncpdhnxegaos" path="res://assets/theme/sprites/backgrounds/001.png" id="1_trfjm"]
+[ext_resource type="Texture2D" uid="uid://cto67ouwm7laj" path="res://assets/theme/sprites/panels/panel_blue.png" id="3_cu4xe"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4lwr2"]
 texture = ExtResource("1_trfjm")
@@ -54,6 +55,29 @@ region_rect = Rect2(36, 0, 18, 18)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k528p"]
 bg_color = Color(0.352941, 0.772549, 0.8, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eckwq"]
+texture = ExtResource("3_cu4xe")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cqbvn"]
+texture = ExtResource("1_trfjm")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(18, 0, 18, 18)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0b23"]
+texture = ExtResource("1_trfjm")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(36, 0, 18, 18)
+
 [resource]
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 2
@@ -66,3 +90,9 @@ Label/colors/font_outline_color = Color(0.239216, 0.160784, 0.188235, 1)
 Label/constants/outline_size = 8
 Label/fonts/font = ExtResource("1_k528p")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_k528p")
+PanelContainerBlueBordered/base_type = &"PanelContainer"
+PanelContainerBlueBordered/styles/panel = SubResource("StyleBoxTexture_eckwq")
+PanelContainerOrange/base_type = &"PanelContainer"
+PanelContainerOrange/styles/panel = SubResource("StyleBoxTexture_cqbvn")
+PanelContainerRed/base_type = &"PanelContainer"
+PanelContainerRed/styles/panel = SubResource("StyleBoxTexture_i0b23")

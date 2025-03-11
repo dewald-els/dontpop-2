@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpvupx01cjrno"]
+
+[ext_resource type="PackedScene" uid="uid://dbg4niw8k1sbt" path="res://scenes/sky/sky.tscn" id="1_6ipa3"]
+[ext_resource type="Texture2D" uid="uid://ca4lwbg3qep8v" path="res://assets/sky/sky.png" id="2_fs16n"]
+
+[node name="Background" type="Node2D"]
+
+[node name="SkyTile" parent="." instance=ExtResource("1_6ipa3")]
+position = Vector2(320, 180)
+scale = Vector2(42, 24.5)
+
+[node name="SkyClouds" parent="." instance=ExtResource("1_6ipa3")]
+modulate = Color(1, 1, 1, 0.752941)
+position = Vector2(320, 180)
+scale = Vector2(1.05, 0.816667)
+texture = ExtResource("2_fs16n")

@@ -1,50 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://faj1ctn8486d"]
+[gd_scene load_steps=4 format=3 uid="uid://faj1ctn8486d"]
 
 [ext_resource type="Script" uid="uid://c5lmmdj8xxbvu" path="res://scenes/screens/try_again/try_again_screen.gd" id="1_pqdp5"]
 [ext_resource type="Theme" uid="uid://c77nee8mfup5a" path="res://assets/theme/game_theme.tres" id="2_6e5l4"]
+[ext_resource type="PackedScene" uid="uid://cpvupx01cjrno" path="res://scenes/sky_ background/sky_background.tscn" id="2_eqj1r"]
 
 [node name="TryAgainScreen" type="CanvasLayer"]
 script = ExtResource("1_pqdp5")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_6e5l4")
+[node name="Background" parent="." instance=ExtResource("2_eqj1r")]
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 638.0
+offset_bottom = 358.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_6e5l4")
+theme_type_variation = &"PanelContainerBlueBordered"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_6e5l4")
 theme_override_font_sizes/font_size = 48
 text = "You Popped!"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="ScoreLabelText" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="ScoreLabelText" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_6e5l4")
 theme_override_font_sizes/font_size = 32
 text = "Your score:"
 horizontal_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_6e5l4")
@@ -52,11 +64,11 @@ theme_override_font_sizes/font_size = 32
 text = "0"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TryAgainButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="TryAgainButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -64,7 +76,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_6e5l4")
 text = "Try Again"
 
-[node name="GiveUpButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="GiveUpButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

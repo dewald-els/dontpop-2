@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://do5vl4e7flf8u"]
+[gd_scene load_steps=6 format=3 uid="uid://do5vl4e7flf8u"]
 
 [ext_resource type="Script" uid="uid://gvfdyetm6vrn" path="res://scenes/power_ups/base_power_up.gd" id="1_1vmb3"]
+[ext_resource type="Texture2D" uid="uid://bxtok28wd0ky7" path="res://scenes/power_ups/bomb/sprites/cherry_bomb.png" id="2_yf110"]
+
+[sub_resource type="Animation" id="Animation_yf110"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
+
+[sub_resource type="Animation" id="Animation_bn2gr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8td5t"]
+_data = {
+&"RESET": SubResource("Animation_bn2gr"),
+&"idle": SubResource("Animation_yf110")
+}
 
 [node name="BasePowerUp" type="Node2D"]
 script = ExtResource("1_1vmb3")
@@ -8,6 +48,7 @@ script = ExtResource("1_1vmb3")
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2_yf110")
 
 [node name="CollectArea2D" type="Area2D" parent="Visuals"]
 unique_name_in_owner = true
@@ -15,3 +56,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8td5t")
+}
+autoplay = "idle"
