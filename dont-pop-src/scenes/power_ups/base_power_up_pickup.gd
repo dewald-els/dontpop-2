@@ -19,5 +19,4 @@ func destroy() -> void:
 
 func on_body_entered(_player: Node2D) -> void:
 	attach()
-	destroy()
 	

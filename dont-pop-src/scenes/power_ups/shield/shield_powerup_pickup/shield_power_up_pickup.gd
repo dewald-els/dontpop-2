@@ -26,6 +26,6 @@ func attach() -> void:
 		
 	var powerup: ShieldPowerup = powerup_scene.instantiate()
 	player.power_ups_container.add_child(powerup)
-	destroy()
+	destroy() #TODO: Remove this and let the base handle the destory.
 	
 	
