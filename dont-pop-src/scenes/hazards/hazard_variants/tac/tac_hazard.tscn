@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bys1asqie71d4"]
+
+[ext_resource type="PackedScene" uid="uid://jop6t3jokp62" path="res://scenes/hazards/base_hazard.tscn" id="1_pglyy"]
+[ext_resource type="Texture2D" uid="uid://b2mt3vkn6k0t2" path="res://scenes/hazards/sprites/tac.png" id="2_62i1c"]
+[ext_resource type="Script" uid="uid://dgkw5ttgexo0n" path="res://scenes/hazards/hazard_variants/tac/tac_hazard.gd" id="2_lnowo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lnowo"]
+radius = 3.0
+height = 22.0
+
+[node name="TacHazard" instance=ExtResource("1_pglyy")]
+script = ExtResource("2_lnowo")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_62i1c")
+
+[node name="CollisionShape2D" parent="." index="3"]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_lnowo")

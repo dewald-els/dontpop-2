@@ -1,0 +1,22 @@
+[gd_scene load_steps=12 format=3 uid="uid://cly66wkp7q7rl"]
+
+[ext_resource type="Script" uid="uid://bqdm1xm8t1may" path="res://scenes/hazard_spawner/hazard_spawner.gd" id="1_omhc2"]
+[ext_resource type="PackedScene" uid="uid://jeld7rhrwrfu" path="res://scenes/hazards/hazard_variants/cactus/cactus_hazard.tscn" id="2_hwc8v"]
+[ext_resource type="PackedScene" uid="uid://l4su0fb8myyp" path="res://scenes/hazards/hazard_variants/star/star_hazard.tscn" id="3_ay6ef"]
+[ext_resource type="PackedScene" uid="uid://0ybmsmccqrpv" path="res://scenes/hazards/hazard_variants/knife/knife_hazard.tscn" id="4_mqdhd"]
+[ext_resource type="PackedScene" uid="uid://bys1asqie71d4" path="res://scenes/hazards/hazard_variants/tac/tac_hazard.tscn" id="5_y2es0"]
+[ext_resource type="PackedScene" uid="uid://cpkskbgstt1nv" path="res://scenes/hazards/hazard_variants/diamond/diamond_hazard.tscn" id="6_0t1op"]
+[ext_resource type="PackedScene" uid="uid://bubqypxkfkj7n" path="res://scenes/hazards/hazard_variants/gold_tac/gold_tac_hazard.tscn" id="7_2fne6"]
+[ext_resource type="PackedScene" uid="uid://dlkjjdnoy4dk3" path="res://scenes/hazards/hazard_variants/lightning/lightning_hazard.tscn" id="8_hmtiu"]
+[ext_resource type="PackedScene" uid="uid://55umvx12pxyq" path="res://scenes/hazards/hazard_variants/needle/needle_hazard.tscn" id="9_n0cjq"]
+[ext_resource type="PackedScene" uid="uid://cwbq1t3pe7r2p" path="res://scenes/hazards/hazard_variants/safety_pin/safety_pin_hazard.tscn" id="10_larop"]
+[ext_resource type="PackedScene" uid="uid://cu337ibxdg24t" path="res://scenes/hazards/hazard_variants/glass/glass_hazard.tscn" id="11_ak8we"]
+
+[node name="HazardSpawner" type="Node2D"]
+script = ExtResource("1_omhc2")
+hazards = Array[PackedScene]([ExtResource("2_hwc8v"), ExtResource("3_ay6ef"), ExtResource("4_mqdhd"), ExtResource("5_y2es0"), ExtResource("6_0t1op"), ExtResource("7_2fne6"), ExtResource("8_hmtiu"), ExtResource("9_n0cjq"), ExtResource("10_larop"), ExtResource("11_ak8we")])
+metadata/_edit_vertical_guides_ = [-592.0]
+
+[node name="SpawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true

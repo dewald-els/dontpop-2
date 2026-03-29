@@ -1,0 +1,2 @@
+class_name KnifeHazard
+extends BaseHazard

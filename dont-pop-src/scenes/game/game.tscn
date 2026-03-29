@@ -1,0 +1,54 @@
+[gd_scene format=4 uid="uid://bbnybbaxkfywo"]
+
+[ext_resource type="Script" uid="uid://dw3od1sc23rae" path="res://scenes/game/game.gd" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://b0ayk3r5gxdf2" path="res://scenes/crt_effect/crt_effect.tscn" id="2_5jirj"]
+[ext_resource type="PackedScene" uid="uid://cy82ut854jv8p" path="res://scenes/player/player.tscn" id="3_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://cpvupx01cjrno" path="res://scenes/sky_ background/sky_background.tscn" id="3_87uf6"]
+[ext_resource type="TileSet" uid="uid://p1k8y1pl3anh" path="res://assets/tiles/tiles.tres" id="3_kelw5"]
+[ext_resource type="PackedScene" uid="uid://cdeelh8krau0h" path="res://scenes/main_camera/main_camera.tscn" id="4_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://cly66wkp7q7rl" path="res://scenes/hazard_spawner/hazard_spawner.tscn" id="5_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://41lviliu15bs" path="res://scenes/coin_spawner/coin_spawner.tscn" id="6_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://b3kl6f0lvb8we" path="res://scenes/powerup_spawner/power_up_spawner.tscn" id="7_87uf6"]
+[ext_resource type="PackedScene" uid="uid://xnhm4um7fe2f" path="res://scenes/ui/hud/hud.tscn" id="7_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://bisja1rul8rtf" path="res://scenes/power_ups/bomb/bomb_pickup/bomb_powerup_pickup.tscn" id="9_kp23o"]
+
+[node name="Game" type="Node2D" unique_id=562053554]
+script = ExtResource("1_sul5r")
+
+[node name="CRTEffect" parent="." unique_id=645783720 instance=ExtResource("2_5jirj")]
+
+[node name="HUD" parent="." unique_id=647256623 instance=ExtResource("7_bdhmt")]
+
+[node name="SkyBackground" parent="." unique_id=137764114 instance=ExtResource("3_87uf6")]
+
+[node name="MainCamera" parent="." unique_id=1633926267 instance=ExtResource("4_2a8rs")]
+
+[node name="TileMapLayerTopBottom" type="TileMapLayer" parent="." unique_id=1310400677]
+tile_map_data = PackedByteArray("AAAAAAAAAQADAAAAAAABAAAAAQADAAAAAAACAAAAAQADAAAAAAADAAAAAQADAAAAAAAEAAAAAQADAAAAAAAFAAAAAQADAAAAAAAGAAAAAQADAAAAAAAHAAAAAQADAAAAAAAIAAAAAQADAAAAAAAJAAAAAQADAAAAAAAKAAAAAQADAAAAAAALAAAAAQADAAAAAAAMAAAAAQADAAAAAAANAAAAAQADAAAAAAAOAAAAAQADAAAAAAAPAAAAAQADAAAAAAAQAAAAAQADAAAAAAARAAAAAQADAAAAAAASAAAAAQADAAAAAAATAAAAAQADAAAAAAAUAAAAAQADAAAAAAAVAAAAAQADAAAAAAAWAAAAAQADAAAAAAAAAAwAAQACAAAAAAABAAwAAQACAAAAAAACAAwAAQACAAAAAAADAAwAAQACAAAAAAAEAAwAAQACAAAAAAAFAAwAAQACAAAAAAAGAAwAAQACAAAAAAAHAAwAAQACAAAAAAAIAAwAAQACAAAAAAAJAAwAAQACAAAAAAAMAAwAAQACAAAAAAANAAwAAQACAAAAAAAOAAwAAQACAAAAAAAPAAwAAQACAAAAAAAQAAwAAQACAAAAAAALAAwAAQACAAAAAAAKAAwAAQACAAAAAAARAAwAAQACAAAAAAASAAwAAQACAAAAAAATAAwAAQACAAAAAAAUAAwAAQACAAAAAAAVAAwAAQACAAAAAAAWAAwAAQACAAAAAAA=")
+tile_set = ExtResource("3_kelw5")
+
+[node name="TileMapLayerLeftRight" type="TileMapLayer" parent="." unique_id=1010413125]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAAAAAEAAQABAAAAAAAAAAIAAQABAAAAAAAAAAMAAQABAAAAAAAAAAQAAQABAAAAAAAAAAUAAQABAAAAAAAAAAYAAQABAAAAAAAAAAcAAQABAAAAAAAAAAgAAQABAAAAAAAAAAkAAQABAAAAAAAAAAoAAQABAAAAAAAAAAsAAQABAAAAAAAAAAwAAQABAAAAAAAWAAwAAQAAAAAAAAAWAAsAAQAAAAAAAAAWAAoAAQAAAAAAAAAWAAkAAQAAAAAAAAAWAAgAAQAAAAAAAAAWAAcAAQAAAAAAAAAWAAYAAQAAAAAAAAAWAAUAAQAAAAAAAAAWAAQAAQAAAAAAAAAWAAMAAQAAAAAAAAAWAAIAAQAAAAAAAAAWAAEAAQAAAAAAAAAWAAAAAQAAAAAAAAA=")
+tile_set = ExtResource("3_kelw5")
+
+[node name="HazardsContainer" type="Node" parent="." unique_id=231519214 groups=["hazard_container"]]
+
+[node name="CoinContainer" type="Node" parent="." unique_id=1597909575 groups=["coin_container"]]
+
+[node name="PowerUpContainer" type="Node" parent="." unique_id=118819890 groups=["powerup_container"]]
+
+[node name="Spawners" type="Node" parent="." unique_id=1479074726]
+
+[node name="CoinSpawner" parent="Spawners" unique_id=975893480 node_paths=PackedStringArray("coin_container") instance=ExtResource("6_bdhmt")]
+coin_container = NodePath("../../CoinContainer")
+
+[node name="HazardSpawner" parent="Spawners" unique_id=2017572925 node_paths=PackedStringArray("hazard_container") instance=ExtResource("5_lfrn8")]
+hazard_container = NodePath("../../HazardsContainer")
+
+[node name="PowerUpSpawner" parent="Spawners" unique_id=784075953 node_paths=PackedStringArray("powerup_container") instance=ExtResource("7_87uf6")]
+powerups = Array[PackedScene]([ExtResource("9_kp23o")])
+powerup_container = NodePath("../../PowerUpContainer")
+
+[node name="Player" parent="." unique_id=67583211 instance=ExtResource("3_0sr1o")]
+z_index = 1
+position = Vector2(320, 192)

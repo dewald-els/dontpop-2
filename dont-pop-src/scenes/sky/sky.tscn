@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbg4niw8k1sbt"]
+
+[ext_resource type="Texture2D" uid="uid://bckysd382wcup" path="res://scenes/sky/sprites/sky_tile.png" id="1_3ghx6"]
+
+[node name="Sky" type="Sprite2D"]
+position = Vector2(320, 184)
+scale = Vector2(41, 24)
+texture = ExtResource("1_3ghx6")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bubqypxkfkj7n"]
+
+[ext_resource type="PackedScene" uid="uid://jop6t3jokp62" path="res://scenes/hazards/base_hazard.tscn" id="1_p5b7h"]
+[ext_resource type="Texture2D" uid="uid://duk5jd217rhb4" path="res://scenes/hazards/sprites/gold_tac.png" id="2_gvkyv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ira7"]
+radius = 3.0
+height = 18.0
+
+[node name="GoldTacHazard" instance=ExtResource("1_p5b7h")]
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(1, 0)
+texture = ExtResource("2_gvkyv")
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CapsuleShape2D_0ira7")

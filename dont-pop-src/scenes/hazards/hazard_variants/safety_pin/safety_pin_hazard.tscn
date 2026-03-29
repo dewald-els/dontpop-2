@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwbq1t3pe7r2p"]
+
+[ext_resource type="PackedScene" uid="uid://jop6t3jokp62" path="res://scenes/hazards/base_hazard.tscn" id="1_p31rx"]
+[ext_resource type="Texture2D" uid="uid://b40anksrhaicg" path="res://scenes/hazards/sprites/safety_pin.png" id="2_4im52"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxalu"]
+radius = 6.0
+
+[node name="SafetyPinHazard" instance=ExtResource("1_p31rx")]
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(-2, 0)
+texture = ExtResource("2_4im52")
+
+[node name="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CapsuleShape2D_sxalu")

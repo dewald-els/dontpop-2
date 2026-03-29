@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb8efcrb20gms"]
+
+[ext_resource type="PackedScene" uid="uid://do5vl4e7flf8u" path="res://scenes/power_ups/base_power_up_pickup.tscn" id="1_1hmoy"]
+[ext_resource type="Script" uid="uid://cf71lxfeyx4vc" path="res://scenes/power_ups/shield/shield_powerup_pickup/shield_power_up_pickup.gd" id="2_xvepn"]
+[ext_resource type="PackedScene" uid="uid://d0d2ehs6okgxu" path="res://scenes/power_ups/shield/shield_powerup/shield_powerup.tscn" id="3_l6d2b"]
+[ext_resource type="Texture2D" uid="uid://bqwpc8m326k2s" path="res://scenes/power_ups/shield/shield_powerup_pickup/sprites/shield_power_up_pickup.png" id="3_tffpk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tffpk"]
+radius = 16.0
+
+[node name="ShieldPowerUpPickup" instance=ExtResource("1_1hmoy")]
+script = ExtResource("2_xvepn")
+powerup_scene = ExtResource("3_l6d2b")
+
+[node name="Sprite2D" parent="Visuals" index="0"]
+texture = ExtResource("3_tffpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/CollectArea2D" index="0"]
+shape = SubResource("CircleShape2D_tffpk")
